@@ -1,0 +1,4 @@
+ldap_base: 'dc=hpc,dc=unibo,dc=it'
+ldap_uri: 'ldaps://ldap-01.hpc.unibo.it ldaps://ldap-02.hpc.unibo.it'
+ldap_ca_filename: '/etc/ldap/hpcCACert.pem'
+sshd_allowed_groups: ['root', 'adm', 'cesia']
