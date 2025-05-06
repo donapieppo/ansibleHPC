@@ -1,0 +1,8 @@
+namespace: hpc
+name: common
+version: 1.0.0
+readme: README.md
+authors:
+  - Your Name <you@example.com>
+description: Shared Ansible roles for HPC systems
+license: MIT
