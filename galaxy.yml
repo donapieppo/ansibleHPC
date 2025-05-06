@@ -1,8 +1,8 @@
-namespace: hpc
-name: common
-version: 1.0.0
+namespace: unibo
+name: hpc
+version: 0.1
 readme: README.md
 authors:
-  - Your Name <you@example.com>
-description: Shared Ansible roles for HPC systems
+  - Pietro Donatini <pietro.donatini@unibo.it>
+description: Shared Ansible roles for AlmaHPC nodes
 license: MIT
