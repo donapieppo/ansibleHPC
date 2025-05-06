@@ -1,0 +1,25 @@
+---
+- name: Common /etc/hosts for all nodes
+  copy:
+    src: hosts
+    dest: /etc/hosts
+    owner: root
+    group: root
+    mode: '0644'
+  # ansible.builtin.blockinfile:
+  #   path: /etc/hosts
+  #   block: |
+  #     {{ item.ip }} {{ item.name }}
+  #   marker: ""
+  # loop:
+  #   - { ip: 172.30.231.10, name: "lnvp-cephmon-01.hpc.unibo.it lnvp-cephmon-01" }
+  #   - { ip: 172.30.231.11, name: "lnvp-cephmon-02.hpc.unibo.it lnvp-cephmon-02" }
+  #   - { ip: 172.30.231.12, name: "lnvp-cephmon-03.hpc.unibo.it lnvp-cephmon-03" }
+  #   - { ip: 172.30.231.13, name: "lnvp-cephosd-01.hpc.unibo.it lnvp-cephosd-01" }
+  #   - { ip: 137.204.25.11, name: "lcsp-slurm-01.hpc.unibo.it   lcsp-slurm-01" }
+  #   - { ip: 172.30.231.80, name: "lnvp-ood-01.hpc.unibo.it     lnvp-ood-01" }
+  #   - { ip: 172.30.231.99, name: "lnvp-login-01.hpc.unibo.it   lnvp-login-01" }
+  #   - { ip: 172.30.231.98, name: "lnvp-login-02.hpc.unibo.it   lnvp-login-01" }
+  #   - { ip: 172.30.231.10, name: "lnvp-node-01.hpc.unibo.it    lnvp-node-01" }
+  #   - { ip: 172.30.231.10, name: "lnvp-node-02.hpc.unibo.it    lnvp-node-02" }
+  #   - { ip: 172.30.231.10, name: "lnvp-node-03.hpc.unibo.it    lnvp-node-03" }
