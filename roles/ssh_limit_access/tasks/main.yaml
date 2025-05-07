@@ -1,0 +1,8 @@
+---
+- name: Limit sshd to adm group users
+  ansible.builtin.template:
+    src: permit_only_adm_group.conf.j2
+    dest: /etc/ssh/sshd_config.d/99_permit_only_adm_group.conf
+    owner: root
+    group: root
+    mode: '0644'
