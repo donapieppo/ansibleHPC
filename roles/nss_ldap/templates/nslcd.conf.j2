@@ -1,0 +1,23 @@
+uid nslcd
+gid nslcd
+
+base {{ ldap_base }}
+uri {{ ldap_uri }}
+
+ldap_version 3
+scope sub
+
+# The DN to bind with for normal lookups.
+# rootpwmoddn cn=admin,dc=example,dc=com
+# binddn cn=annonymous,dc=example,dc=net
+# bindpw secret
+
+# SSL options
+# ssl off
+# tls_reqcert never
+
+tls_reqcert hard
+tls_cacertfile {{ ldap_ca_filename }}
+
+# because of firewall between cesia and navile
+idle_timelimit 900

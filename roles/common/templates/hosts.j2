@@ -2,13 +2,13 @@
 
 # common to hpc cluster
 
-{% for h in etc_hosts_common -%}
+{% for h in hosts_common -%}
 {{ h }}
 {% endfor %}
 
 # locals
 
-{% for h in etc_hosts_others -%}
+{% for h in hosts_others -%}
 {{ h }}
 {% endfor %}
 

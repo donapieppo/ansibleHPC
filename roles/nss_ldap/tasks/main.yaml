@@ -1,0 +1,25 @@
+---
+- name: Nss Ldap package (nslcd)
+  ansible.builtin.package:
+    name:
+      - nslcd
+    state: present
+
+- name: Nss Ldap in nsswitch.conf
+  copy:
+    src: nsswitch.conf
+    dest: /etc/nsswitch.conf
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Configure AlmaHPC nslcd client
+  ansible.builtin.template:
+    src: nslcd.conf.j2
+    dest: /etc/nslcd.conf
+    owner: root
+    group: root
+    mode: '0644'
+
+
+

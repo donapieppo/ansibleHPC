@@ -3,7 +3,7 @@ ldap_uri: 'ldaps://ldap-01.hpc.unibo.it ldaps://ldap-02.hpc.unibo.it'
 ldap_ca_filename: '/etc/ldap/hpcCACert.pem'
 sshd_allowed_groups: ['root', 'adm', 'cesia']
 
-etc_hosts_common:
+hosts_common:
   - 172.30.231.10 lnvp-cephmon-01.hpc.unibo.it lnvp-cephmon-01
   - 172.30.231.11 lnvp-cephmon-02.hpc.unibo.it lnvp-cephmon-02
   - 172.30.231.12 lnvp-cephmon-03.hpc.unibo.it lnvp-cephmon-03
@@ -21,4 +21,4 @@ etc_hosts_common:
   - 172.30.231.101 lnvp-node-02.hpc.unibo.it lnvp-node-02 
   - 172.30.231.102 lnvp-node-03.hpc.unibo.it lnvp-node-03 
 
-etc_hosts_others: []
+hosts_others: []

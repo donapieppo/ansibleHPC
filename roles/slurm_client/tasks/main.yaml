@@ -1,0 +1,14 @@
+---
+- name: Slurm client for login
+  ansible.builtin.package:
+    name:
+      - slurm-client
+    state: present
+
+- name: Install slurm.conf
+  copy:
+    src: slurm.conf
+    dest: /etc/slurm/slurm.conf
+    owner: root
+    group: root
+    mode: '0644'
