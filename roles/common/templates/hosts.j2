@@ -1,9 +1,15 @@
 127.0.0.1 localhost
 
-{{ etc_hosts_common }}
+# common to hpc cluster
 
-{% if etc_hosts_others != '' %}
-{{ etc_hosts_others }}
+{% for h in etc_hosts_common -%}
+{{ h }}
+{% endfor %}
+
+# locals
+
+{% for h in etc_hosts_others -%}
+{{ h }}
 {% endif %}
 
 # The following lines are desirable for IPv6 capable hosts
