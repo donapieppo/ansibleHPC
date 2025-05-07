@@ -2,3 +2,23 @@ ldap_base: 'dc=hpc,dc=unibo,dc=it'
 ldap_uri: 'ldaps://ldap-01.hpc.unibo.it ldaps://ldap-02.hpc.unibo.it'
 ldap_ca_filename: '/etc/ldap/hpcCACert.pem'
 sshd_allowed_groups: ['root', 'adm', 'cesia']
+
+etc_hosts_common:
+  - 172.30.231.10 lnvp-cephmon-01.hpc.unibo.it lnvp-cephmon-01
+  - 172.30.231.11 lnvp-cephmon-02.hpc.unibo.it lnvp-cephmon-02
+  - 172.30.231.12 lnvp-cephmon-03.hpc.unibo.it lnvp-cephmon-03
+  - 172.30.231.13 lnvp-cephosd-01.hpc.unibo.it lnvp-cephosd-01
+  - 
+  - 172.30.231.50 lnvp-ansible-01.hpc.unibo.it lnvp-ansible-01
+  - 
+  - 137.204.25.110 lcsp-slurm-01.hpc.unibo.it lcsp-slurm-01
+  - 
+  - 172.30.231.80  lnvp-ood-01.hpc.unibo.it lnvp-ood-01
+  - 172.30.231.99  lnvp-login-01.hpc.unibo.it lnvp-login-01 
+  - 172.30.231.98  lnvp-login-01.hpc.unibo.it lnvp-login-02
+  - 
+  - 172.30.231.100 lnvp-node-01.hpc.unibo.it lnvp-node-01 
+  - 172.30.231.101 lnvp-node-02.hpc.unibo.it lnvp-node-02 
+  - 172.30.231.102 lnvp-node-03.hpc.unibo.it lnvp-node-03 
+
+etc_hosts_others: []
