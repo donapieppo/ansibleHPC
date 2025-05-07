@@ -22,3 +22,8 @@ hosts_common:
   - 172.30.231.102 lnvp-node-03.hpc.unibo.it lnvp-node-03 
 
 hosts_others: []
+
+ntp_servers:
+  - 137.204.25.80
+  - 137.204.25.71
+  - 10.31.23.13
