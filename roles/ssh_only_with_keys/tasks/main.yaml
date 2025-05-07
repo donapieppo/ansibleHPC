@@ -1,0 +1,8 @@
+---
+- name: Limit sshd access to authorized keys 
+  copy:
+    src: only_with_keys.conf
+    dest: /etc/ssh/sshd_config.d/99_only_with_keys.conf
+    owner: root
+    group: root
+    mode: '0644'
