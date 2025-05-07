@@ -38,15 +38,15 @@ all:
   hosts: chimica_hosts
   become: true
   roles:
-    - common
-    - ldap_client
-    - nss_ldap
-    - munge
-    - slurmd
-    - lmod
-    - node_software
-    - ssh_limit_access
-    - chrony
-    - ceph_client
+    - unibo.hpc.common
+    - unibo.hpc.ldap_client
+    - unibo.hpc.nss_ldap
+    - unibo.hpc.munge
+    - unibo.hpc.slurmd
+    - unibo.hpc.lmod
+    - unibo.hpc.node_software
+    - unibo.hpc.ssh_limit_access
+    - unibo.hpc.chrony
+    - unibo.hpc.ceph_client
 ```
 
