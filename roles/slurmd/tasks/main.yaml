@@ -1,4 +1,7 @@
 ---
+- include_role:
+    name: unibo.hpc.slurm_client
+
 - name: Slurm for node
   ansible.builtin.package:
     name:
@@ -7,14 +10,14 @@
       - cgroup-tools
     state: present
 
-- name: Install slurm.conf
-  copy:
-    src: slurm.conf
-    dest: /etc/slurm/slurm.conf
-    owner: root
-    group: root
-    mode: '0644'
-
+# - name: Install slurm.conf
+#   copy:
+#     src: slurm.conf
+#     dest: /etc/slurm/slurm.conf
+#     owner: root
+#     group: root
+#     mode: '0644'
+#
 - name: Install gres.conf
   copy:
     src: gres.conf
