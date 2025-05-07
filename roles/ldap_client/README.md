@@ -1,2 +1,2 @@
-# Ldap client
+# unibo.hpc.ldap_client role
 

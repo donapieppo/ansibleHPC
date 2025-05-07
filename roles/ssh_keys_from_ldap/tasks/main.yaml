@@ -1,0 +1,16 @@
+---
+- name: Limit sshd access to ldap users with authorized keys script
+  copy:
+    src: ldap_authorized_keys
+    dest: /usr/local/sbin/ldap_authorized_keys
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Limit sshd access to ldap users with authorized keys config
+  copy:
+    src: ldap_authorized_keys.conf
+    dest: /etc/ssh/sshd_config.d/99_ldap_authorized_keys.conf
+    owner: root
+    group: root
+    mode: '0644'

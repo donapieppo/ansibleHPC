@@ -1,0 +1,35 @@
+---
+- name: Slurm for node
+  ansible.builtin.package:
+    name:
+      - slurmd
+      - slurm-client
+      - cgroup-tools
+    state: present
+
+- name: Install slurm.conf
+  copy:
+    src: slurm.conf
+    dest: /etc/slurm/slurm.conf
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Install gres.conf
+  copy:
+    src: gres.conf
+    dest: /etc/slurm/gres.conf
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Install gres.conf
+  copy:
+    src: cgroup.conf
+    dest: /etc/slurm/cgroup.conf
+    owner: root
+    group: root
+    mode: '0644'
+
+
+

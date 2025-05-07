@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -eu
+
+uid="$1"
+
+if ! expr "$uid" : '[a-zA-Z0-9._-]*$' 1>/dev/null
+then
+  logger -s -t sshd -p "auth.$uid" "Wrong username format for $uid"
+  echo ""
+else
+  ldapsearch -x -LLL -o ldif-wrap=no "(&(uid="$uid")(sshPublicKey=*))" 'sshPublicKey' | sed -n 's/^sshPublicKey:\s*//p'
+fi
