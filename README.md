@@ -1,38 +1,52 @@
-Unibo HPC
-=========
+# Unibo HPC
 
-A brief description of the role goes here.
+Collezione di ansible rules per configurare nodi nel cluster Navile.
 
-Requirements
-------------
+## Utilizzo
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Esempio:
 
-Role Variables
---------------
+```bash
+mkdir ansible-chimica
+cd ansible-chimica
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+cat > requirements.yml <<EOF
+collections:
+  - name: git@github.com:donapieppo/ansibleHPC.git
+    type: git
+    version: main
+EOF
 
-Dependencies
-------------
+ansible-galaxy collection install -r requirements.yml
+```
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+## Esempio di inventory (`inventory.yaml`)
 
-Example Playbook
-----------------
+```yaml
+all:
+  children:
+    chimica_hosts:
+      hosts:
+        lnvp-node-03.hpc.unibo.it:
+```
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+## Esempio di playbook (`chimica.yaml`)
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```yaml
+---
+- name: HPC chimica
+  hosts: chimica_hosts
+  become: true
+  roles:
+    - common
+    - ldap_client
+    - nss_ldap
+    - munge
+    - slurmd
+    - lmod
+    - node_software
+    - ssh_limit_access
+    - chrony
+    - ceph_client
+```
 
-License
--------
-
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
